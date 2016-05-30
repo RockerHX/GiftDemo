@@ -14,6 +14,7 @@
 		CD572DF41CF6A02700CCEC30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD572DF31CF6A02700CCEC30 /* Assets.xcassets */; };
 		CD572DF71CF6A02700CCEC30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD572DF51CF6A02700CCEC30 /* LaunchScreen.storyboard */; };
 		CD572E011CF6A6AC00CCEC30 /* Gift.gif in Resources */ = {isa = PBXBuildFile; fileRef = CD572E001CF6A6AC00CCEC30 /* Gift.gif */; };
+		CD7178131CFC41BA006CAB2C /* HXCountAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7178121CFC41BA006CAB2C /* HXCountAnimationViewController.m */; };
 		CD7224941CF7E9D600C8EC6B /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = CD7224931CF7E9D600C8EC6B /* 2.png */; };
 		D6C244391EB54E8DB7A4FE3A /* libPods-GifDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FBC8BD43A2373D545625F0C3 /* libPods-GifDemo.a */; };
 /* End PBXBuildFile section */
@@ -31,6 +32,8 @@
 		CD572DF61CF6A02700CCEC30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD572DF81CF6A02700CCEC30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD572E001CF6A6AC00CCEC30 /* Gift.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Gift.gif; sourceTree = "<group>"; };
+		CD7178111CFC41BA006CAB2C /* HXCountAnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXCountAnimationViewController.h; sourceTree = "<group>"; };
+		CD7178121CFC41BA006CAB2C /* HXCountAnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXCountAnimationViewController.m; sourceTree = "<group>"; };
 		CD7224931CF7E9D600C8EC6B /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
 		D2ABEF01DA32E9A938E40A4F /* Pods-GifDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GifDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-GifDemo/Pods-GifDemo.release.xcconfig"; sourceTree = "<group>"; };
 		FBC8BD43A2373D545625F0C3 /* libPods-GifDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GifDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,6 +93,8 @@
 				CD572DEB1CF6A02700CCEC30 /* AppDelegate.m */,
 				CD572DED1CF6A02700CCEC30 /* ViewController.h */,
 				CD572DEE1CF6A02700CCEC30 /* ViewController.m */,
+				CD7178111CFC41BA006CAB2C /* HXCountAnimationViewController.h */,
+				CD7178121CFC41BA006CAB2C /* HXCountAnimationViewController.m */,
 				CD572DF01CF6A02700CCEC30 /* Main.storyboard */,
 				CD572DF31CF6A02700CCEC30 /* Assets.xcassets */,
 				CD572DF51CF6A02700CCEC30 /* LaunchScreen.storyboard */,
@@ -234,6 +239,7 @@
 			files = (
 				CD572DEF1CF6A02700CCEC30 /* ViewController.m in Sources */,
 				CD572DEC1CF6A02700CCEC30 /* AppDelegate.m in Sources */,
+				CD7178131CFC41BA006CAB2C /* HXCountAnimationViewController.m in Sources */,
 				CD572DE91CF6A02700CCEC30 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

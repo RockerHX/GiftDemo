@@ -85,10 +85,10 @@
             </objects>
             <point key="canvasLocation" x="169.59999999999999" y="453.92666666666668"/>
         </scene>
-        <!--View Controller-->
+        <!--Count Animation View Controller-->
         <scene sceneID="ezx-gV-yZD">
             <objects>
-                <viewController id="ywr-V4-qnu" sceneMemberID="viewController">
+                <viewController id="ywr-V4-qnu" customClass="HXCountAnimationViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wLr-ik-flp"/>
                         <viewControllerLayoutGuide type="bottom" id="Syn-lZ-IUu"/>
@@ -131,6 +131,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="RsT-sc-GTq"/>
+                    <connections>
+                        <outlet property="countLabel" destination="WfM-5J-XBc" id="qoH-QX-jcC"/>
+                        <outlet property="labelContainer" destination="dSv-v1-GyC" id="6Yx-7F-ED0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="82B-cb-iv0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
