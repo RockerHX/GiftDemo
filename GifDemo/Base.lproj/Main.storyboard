@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="kTl-2h-NxB">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -7,6 +7,22 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="om6-yE-oKQ">
+            <objects>
+                <navigationController id="kTl-2h-NxB" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QqY-qM-xU3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="six-RD-hWP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uXg-gw-60v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-256" y="453"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -25,15 +41,15 @@
                                     <constraint firstAttribute="width" secondItem="EO0-hU-sOq" secondAttribute="height" multiplier="1:1" id="69I-U6-ggb"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qLk-Wh-aLy">
-                                <rect key="frame" x="63" y="91" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qLk-Wh-aLy">
+                                <rect key="frame" x="62" y="91" width="37" height="30"/>
                                 <state key="normal" title="short"/>
                                 <connections>
                                     <action selector="shortEvent" destination="BYZ-38-t0r" eventType="touchUpInside" id="VwN-dl-d4B"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qIh-nv-oth">
-                                <rect key="frame" x="187" y="91" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qIh-nv-oth">
+                                <rect key="frame" x="225" y="91" width="30" height="30"/>
                                 <state key="normal" title="long"/>
                                 <connections>
                                     <action selector="longEvent" destination="BYZ-38-t0r" eventType="touchUpInside" id="6LN-EM-guZ"/>
@@ -42,11 +58,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="qIh-nv-oth" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" multiplier="1.5" id="9yw-c4-5jl"/>
                             <constraint firstItem="EO0-hU-sOq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BQ3-1c-rK5"/>
+                            <constraint firstItem="qIh-nv-oth" firstAttribute="centerY" secondItem="qLk-Wh-aLy" secondAttribute="centerY" id="Zev-FD-fRX"/>
+                            <constraint firstItem="EO0-hU-sOq" firstAttribute="top" secondItem="qLk-Wh-aLy" secondAttribute="bottom" constant="83" id="f9b-Ri-LyL"/>
+                            <constraint firstItem="qLk-Wh-aLy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" multiplier="0.5" id="jfD-8Z-zG7"/>
                             <constraint firstItem="EO0-hU-sOq" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="qLk-Ac-Y2Z"/>
                             <constraint firstItem="EO0-hU-sOq" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="zXd-QT-4OM"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="lyX-dI-wkL"/>
                     <connections>
                         <outlet property="imageView" destination="EO0-hU-sOq" id="tnr-4R-Ddd"/>
                     </connections>
