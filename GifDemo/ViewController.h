@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FLAnimatedImage.h"
+#import "YYAnimatedImageView.h"
+
 
 @interface ViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet YYAnimatedImageView *imageView;
 
 @end
 
