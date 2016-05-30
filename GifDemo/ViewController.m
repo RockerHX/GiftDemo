@@ -15,47 +15,64 @@
 
 
 @implementation ViewController {
-    dispatch_queue_t queue;
-}
-
-- (IBAction)shortEvent {
-    dispatch_async(queue, ^{
-        dispatch_sync(dispatch_get_main_queue(), ^{
-            NSLog(@"-------------");
-            YYImage *image = [YYImage imageNamed:@"2.png"];
-            _imageView.image = image;
-            NSLog(@"short");
-        });
-        sleep(5);
-        dispatch_sync(dispatch_get_main_queue(), ^{
-            NSLog(@"-------------");
-            _imageView.image = nil;
-        });
-    });
-}
-
-- (IBAction)longEvent {
-    dispatch_async(queue, ^{
-        dispatch_sync(dispatch_get_main_queue(), ^{
-            NSLog(@"-------------");
-            YYImage *image = [YYImage imageNamed:@"Gift.gif"];
-            _imageView.image = image;
-            NSLog(@"short");
-        });
-        sleep(3);
-        dispatch_sync(dispatch_get_main_queue(), ^{
-            NSLog(@"-------------");
-            _imageView.image = nil;
-        });
-    });
+    dispatch_queue_t _queue;
+    dispatch_semaphore_t _semaphore;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     NSLog(@"-------------");
-    queue = dispatch_queue_create("com.dispatch.serial", DISPATCH_QUEUE_SERIAL);
+    _queue = dispatch_queue_create("com.gift.dynamic_animation", DISPATCH_QUEUE_SERIAL);
+    _semaphore = dispatch_semaphore_create(1);
 }
 
+- (IBAction)shortEvent {
+    dispatch_async(_queue, ^{
+        dispatch_semaphore_wait(_semaphore, DISPATCH_TIME_FOREVER);
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            NSLog(@"-------------");
+            NSLog(@"Short Start");
+            _imageView.alpha = 1.0f;
+            YYImage *image = [YYImage imageNamed:@"Gift.gif"];
+            _imageView.image = image;
+            
+            [UIView animateWithDuration:0.5f delay:3.0f options:UIViewAnimationOptionCurveEaseIn animations:^{
+                NSLog(@"-------------");
+                NSLog(@"Animation");
+                _imageView.alpha = 0.0f;
+            } completion:^(BOOL finished) {
+                NSLog(@"-------------");
+                NSLog(@"End");
+                _imageView.image = nil;
+                dispatch_semaphore_signal(_semaphore);
+            }];
+        });
+    });
+}
+
+- (IBAction)longEvent {
+    dispatch_async(_queue, ^{
+        dispatch_semaphore_wait(_semaphore, DISPATCH_TIME_FOREVER);
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            NSLog(@"-------------");
+            NSLog(@"Long Start");
+            _imageView.alpha = 1.0f;
+            YYImage *image = [YYImage imageNamed:@"2.png"];
+            _imageView.image = image;
+            
+            [UIView animateWithDuration:0.5f delay:5.0f options:UIViewAnimationOptionCurveEaseIn animations:^{
+                NSLog(@"-------------");
+                NSLog(@"Animation");
+                _imageView.alpha = 0.0f;
+            } completion:^(BOOL finished) {
+                NSLog(@"-------------");
+                NSLog(@"End");
+                _imageView.image = nil;
+                dispatch_semaphore_signal(_semaphore);
+            }];
+        });
+    });
+}
 
 @end
